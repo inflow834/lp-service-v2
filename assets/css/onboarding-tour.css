@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800&display=swap');
+
+:root {
+	--lpt-accent: #FF6B4A;
+	--lpt-accent-ink: #FFFFFF;
+	--lpt-teal: #2F8E76;
+	--lpt-ink: #1D2B4F;
+	--lpt-ink-soft: #4C5A79;
+	--lpt-surface: #FFFFFF;
+	--lpt-border: #C7D1DF;
+	--lpt-display: 'M PLUS Rounded 1c', 'Hiragino Maru Gothic ProN', sans-serif;
+}
+
+#wpadminbar .lp-service-tour-trigger .ab-item {
+	color: #ffd9cc !important;
+	font-weight: 600;
+}
+#wpadminbar .lp-service-tour-trigger:hover .ab-item {
+	color: #fff !important;
+}
+
+.lpt-scrim {
+	position: fixed;
+	inset: 0;
+	z-index: 100000;
+	pointer-events: none;
+}
+
+.lpt-spotlight {
+	position: fixed;
+	border-radius: 8px;
+	box-shadow: 0 0 0 9999px rgba(15, 22, 38, .55);
+	transition: top .3s ease, left .3s ease, width .3s ease, height .3s ease;
+	pointer-events: none;
+	z-index: 100000;
+}
+
+/* 章カード表示中は、対象を持たないので全面を暗くする */
+.lpt-scrim-solid {
+	background: rgba(15, 22, 38, .62);
+	pointer-events: auto;
+}
+
+.lpt-tooltip {
+	position: fixed;
+	z-index: 100002;
+	width: 340px;
+	max-width: calc(100vw - 32px);
+	background: var(--lpt-surface);
+	color: var(--lpt-ink);
+	border-radius: 10px;
+	border: 1px solid var(--lpt-border);
+	box-shadow: 0 12px 32px rgba(15, 22, 38, .28);
+	padding: 18px 18px 16px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	transition: top .3s ease, left .3s ease, bottom .3s ease;
+}
+
+.lpt-tooltip-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 10px;
+}
+
+.lpt-progress {
+	font-size: 11px;
+	font-weight: 700;
+	color: var(--lpt-ink-soft);
+	background: #EEF2F7;
+	padding: 3px 9px;
+	border-radius: 999px;
+	white-space: nowrap;
+	font-variant-numeric: tabular-nums;
+}
+
+.lpt-chapter {
+	font-size: 11px;
+	font-weight: 700;
+	color: var(--lpt-accent);
+	font-family: var(--lpt-display);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.lpt-overall {
+	margin-top: 10px;
+	padding-top: 9px;
+	border-top: 1px solid #EEF2F7;
+	font-size: 11px;
+	color: #8792A8;
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+}
+
+.lpt-close {
+	position: absolute;
+	top: 10px;
+	right: 12px;
+	width: 22px;
+	height: 22px;
+	border: none;
+	background: none;
+	color: var(--lpt-ink-soft);
+	font-size: 16px;
+	line-height: 1;
+	cursor: pointer;
+	border-radius: 4px;
+}
+.lpt-close:hover { background: #EEF2F7; color: var(--lpt-ink); }
+
+.lpt-title {
+	font-size: 15px;
+	font-weight: 700;
+	margin: 0 0 6px;
+	line-height: 1.4;
+	color: var(--lpt-ink);
+}
+
+.lpt-body {
+	font-size: 13px;
+	line-height: 1.7;
+	color: var(--lpt-ink-soft);
+	margin: 0 0 14px;
+}
+.lpt-body .mono {
+	font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+	font-size: 12px;
+	color: var(--lpt-ink);
+	background: #EEF2F7;
+	padding: 1px 5px;
+	border-radius: 3px;
+}
+
+.lpt-nav-hint {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 12px;
+	font-weight: 700;
+	color: var(--lpt-teal);
+	margin: 0 0 14px;
+}
+
+/* ---- ティアのバッジ ---- */
+.lpt-badge {
+	display: inline-block;
+	margin-left: 6px;
+	padding: 2px 7px;
+	border-radius: 999px;
+	font-size: 10.5px;
+	font-weight: 700;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+.lpt-badge-req { background: #FFE6E0; color: #C43B1C; }
+.lpt-badge-rec { background: #FFF2D6; color: #96650B; }
+.lpt-badge-done { background: #DFF3E4; color: #1D6F3C; }
+
+/* ---- 前提が欠けているときの注記 ---- */
+.lpt-note {
+	font-size: 12px;
+	line-height: 1.6;
+	color: #96650B;
+	background: #FFF8EA;
+	border-left: 3px solid #F0B429;
+	padding: 8px 10px;
+	border-radius: 0 5px 5px 0;
+	margin: 0 0 14px;
+}
+
+/* ---- サンプル値ボタン ---- */
+.lpt-sample {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 0 0 14px;
+}
+
+.lpt-linkbtn {
+	font-size: 12px;
+	font-weight: 700;
+	color: var(--lpt-teal);
+	background: #EAF5F1;
+	border: 1px solid #BFDDD3;
+	border-radius: 999px;
+	padding: 5px 11px;
+	cursor: pointer;
+}
+.lpt-linkbtn:hover { background: #DCEDE6; }
+
+.lpt-linkbtn-sub {
+	color: var(--lpt-ink-soft);
+	background: #F5F7FA;
+	border-color: var(--lpt-border);
+	font-weight: 600;
+}
+.lpt-linkbtn-sub:hover { background: #EAEFF5; }
+
+.lpt-sample-done {
+	font-size: 12px;
+	font-weight: 700;
+	color: var(--lpt-teal);
+}
+
+.lpt-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+}
+
+.lpt-footer-left,
+.lpt-footer-right {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.lpt-footer-right { gap: 12px; }
+
+.lpt-btn {
+	font-size: 12.5px;
+	font-weight: 600;
+	padding: 7px 13px;
+	border-radius: 999px;
+	border: 1px solid var(--lpt-border);
+	background: #F5F7FA;
+	color: var(--lpt-ink);
+	cursor: pointer;
+}
+.lpt-btn:hover { background: #EAEFF5; }
+.lpt-btn:disabled { opacity: .4; cursor: default; }
+
+.lpt-btn-primary {
+	background: var(--lpt-accent);
+	border-color: var(--lpt-accent);
+	color: var(--lpt-accent-ink);
+}
+.lpt-btn-primary:hover { background: #ff5834; }
+
+.lpt-skip {
+	font-size: 12px;
+	color: var(--lpt-ink-soft);
+	background: none;
+	border: none;
+	cursor: pointer;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+/* ---- 章頭・章末・お知らせカード ---- */
+.lpt-card {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 100002;
+	width: 460px;
+	max-width: calc(100vw - 32px);
+	max-height: calc(100vh - 64px);
+	overflow-y: auto;
+	background: var(--lpt-surface);
+	color: var(--lpt-ink);
+	border-radius: 14px;
+	box-shadow: 0 20px 48px rgba(15, 22, 38, .36);
+	padding: 28px 28px 24px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.lpt-card-eyebrow {
+	font-size: 11.5px;
+	font-weight: 700;
+	color: var(--lpt-accent);
+	letter-spacing: .04em;
+	margin: 0 0 6px;
+}
+
+.lpt-card-title {
+	font-family: var(--lpt-display);
+	font-size: 21px;
+	font-weight: 800;
+	line-height: 1.4;
+	margin: 0 0 12px;
+	color: var(--lpt-ink);
+}
+
+.lpt-card-body {
+	font-size: 13.5px;
+	line-height: 1.8;
+	color: var(--lpt-ink-soft);
+	margin: 0 0 12px;
+}
+
+.lpt-card-meta {
+	font-size: 12px;
+	font-weight: 700;
+	color: var(--lpt-teal);
+	margin: 0 0 12px;
+}
+
+.lpt-card-note {
+	font-size: 12.5px;
+	line-height: 1.75;
+	color: var(--lpt-ink-soft);
+	background: #F5F7FA;
+	border-radius: 8px;
+	padding: 11px 13px;
+	margin: 0 0 12px;
+}
+
+.lpt-warn {
+	background: #FFF8EA;
+	border: 1px solid #F3D79A;
+	border-radius: 8px;
+	padding: 12px 14px;
+	margin: 0 0 12px;
+}
+.lpt-warn strong {
+	display: block;
+	font-size: 12px;
+	font-weight: 700;
+	color: #96650B;
+	margin-bottom: 5px;
+}
+.lpt-warn p {
+	font-size: 12.5px;
+	line-height: 1.7;
+	color: #7A5408;
+	margin: 0 0 6px;
+}
+.lpt-warn p:last-child { margin-bottom: 0; }
+
+.lpt-card-actions {
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 18px;
+}
+
+.lpt-pill {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 100002;
+	background: var(--lpt-ink);
+	color: #fff;
+	padding: 12px 16px;
+	border-radius: 10px;
+	max-width: 280px;
+	box-shadow: 0 10px 26px rgba(15, 22, 38, .3);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	font-size: 12.5px;
+	line-height: 1.6;
+}
+.lpt-pill strong { display: block; font-family: var(--lpt-display); font-size: 13px; margin-bottom: 4px; color: #ffb8a3; }
+.lpt-pill a { color: #ffb8a3; font-weight: 700; }
+.lpt-pill .lpt-pill-actions { display: flex; gap: 10px; margin-top: 8px; }
+.lpt-pill button.lpt-skip { color: #cfd6e4; }
+
+.lpt-toast {
+	position: fixed;
+	left: 50%;
+	bottom: 28px;
+	transform: translateX(-50%);
+	z-index: 100002;
+	background: var(--lpt-ink);
+	color: #fff;
+	padding: 12px 20px;
+	border-radius: 999px;
+	font-size: 13px;
+	font-weight: 600;
+	box-shadow: 0 10px 26px rgba(15, 22, 38, .3);
+	opacity: 0;
+	transition: opacity .3s ease;
+	pointer-events: none;
+}
+.lpt-toast.show { opacity: 1; }
+
+@media (max-width: 480px) {
+	.lpt-tooltip { width: calc(100vw - 32px); }
+	.lpt-card { padding: 22px 20px 20px; }
+	.lpt-card-actions { justify-content: stretch; }
+	.lpt-card-actions .lpt-btn { flex: 1 1 auto; }
+	.lpt-footer { flex-wrap: wrap; row-gap: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.lpt-spotlight, .lpt-tooltip { transition: none; }
+}

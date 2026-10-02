@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/comparison-table",
+	"title": "比較テーブル",
+	"category": "lp-service",
+	"icon": "editor-table",
+	"description": "登録した商品を横軸に並べて比較表示",
+	"textdomain": "lp-service",
+	"attributes": {
+		"title": { "type": "string", "default": "比較表" },
+		"productIds": { "type": "array", "default": [] }
+	},
+	"supports": { "html": false, "align": [ "wide", "full" ] },
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

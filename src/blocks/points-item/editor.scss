@@ -1,0 +1,33 @@
+.lp-block-points-item {
+	display: flex;
+	gap: 16px;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	padding: 16px;
+	margin-bottom: 12px;
+
+	&__image {
+		flex-shrink: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 4px;
+
+		img {
+			display: block;
+			width: 100px;
+			height: 100px;
+			object-fit: cover;
+			border-radius: 6px;
+		}
+	}
+
+	&__text {
+		flex: 1;
+		min-width: 0;
+	}
+
+	&__heading {
+		margin-top: 0;
+	}
+}

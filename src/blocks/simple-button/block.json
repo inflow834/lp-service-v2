@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/simple-button",
+	"title": "シンプルボタン",
+	"category": "lp-service",
+	"icon": "button",
+	"description": "矢印付きのCTAボタン（デザイン「シンプル」用）",
+	"textdomain": "lp-service",
+	"attributes": {
+		"text": { "type": "string", "default": "詳しく見てみる" },
+		"url": { "type": "string", "default": "" },
+		"color": { "type": "string", "default": "#e6393f" },
+		"textColor": { "type": "string", "default": "#ffffff" }
+	},
+	"supports": { "html": false },
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

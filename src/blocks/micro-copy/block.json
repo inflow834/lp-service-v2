@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/micro-copy",
+	"title": "マイクロコピー",
+	"category": "lp-service",
+	"icon": "megaphone",
+	"description": "ボタンや見出しの近くに添える短い一言（例: ＼今がおとく／）。文字色はサイドバーで変更できる",
+	"textdomain": "lp-service",
+	"attributes": {
+		"text": { "type": "string", "source": "html", "selector": ".lp-micro-copy__text", "default": "" },
+		"color": { "type": "string", "default": "#e6393f" }
+	},
+	"supports": {
+		"html": false,
+		"typography": { "fontSize": true }
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

@@ -1,0 +1,237 @@
+/* ==========================================================================
+   スマホ専用デザイン（シンプル・ポップ / シンプル・トラスト）
+   - <body>（エディタではキャンバスiframeの<body>）に付く lp-design-{slug} クラスを起点に切り替える
+   - フロント（.lp-simple-*）とエディタ（.lp-block-simple-*）でクラス名が異なるため、:is() で両方を対象にする
+   - ブロック構成は「シンプル」と共通。ここでは幅・配色・装飾だけを上書きする
+   - ボタン色はブロック属性（インラインstyle）が優先されるため、ここでは形・影のみ指定する
+   ========================================================================== */
+
+/* 共通: 幅をスマホ用（最大430px）に固定し、PC表示時は中央寄せ・左右を背景色で埋める
+   ---------------------------------------------------------------------- */
+.lp-design-simple-pop .lp-body--mobile,
+.lp-design-simple-trust .lp-body--mobile {
+	max-width: 430px;
+	min-height: 100vh;
+	margin: 0 auto;
+	padding-bottom: 24px;
+}
+
+.lp-design-simple-pop .lp-service-footer,
+.lp-design-simple-trust .lp-service-footer {
+	max-width: 430px;
+	margin: 0 auto;
+}
+
+/* エディタ: 本文キャンバスとタイトル欄も同じ幅に揃える */
+.lp-design-simple-pop .is-root-container,
+.lp-design-simple-trust .is-root-container,
+.lp-design-simple-pop .editor-visual-editor__post-title-wrapper,
+.lp-design-simple-trust .editor-visual-editor__post-title-wrapper {
+	max-width: 430px;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.lp-design-simple-pop .is-root-container,
+.lp-design-simple-trust .is-root-container {
+	padding-bottom: 40px;
+}
+
+/* 共通: ボタンをスマホで押しやすい幅にする */
+.lp-design-simple-pop :is(.lp-simple-button__link, .lp-block-simple-button__button),
+.lp-design-simple-trust :is(.lp-simple-button__link, .lp-block-simple-button__button) {
+	justify-content: center;
+	min-width: 80%;
+	padding: 18px 32px;
+}
+
+/* ==========================================================================
+   シンプル・ポップ（明るく親しみやすい: オレンジ・黄色 × クリーム）
+   ========================================================================== */
+body.lp-design-simple-pop,
+.editor-styles-wrapper.lp-design-simple-pop {
+	background-color: #ffe7c2;
+	background-image: radial-gradient(#ffd08a 2px, transparent 2px);
+	background-size: 18px 18px;
+	color: #4a3410;
+}
+
+.lp-design-simple-pop .lp-body--mobile,
+.lp-design-simple-pop .lp-service-footer,
+.lp-design-simple-pop .is-root-container,
+.lp-design-simple-pop .editor-visual-editor__post-title-wrapper {
+	background: #fffaf0;
+	box-shadow: 0 0 24px rgba(160, 90, 0, 0.15);
+}
+
+/* 見出し（未選択・アクセントバー）: 丸みのある帯 */
+.lp-design-simple-pop :is(.lp-simple-heading, .lp-block-simple-heading):is(:not([class*="is-style-"]), .is-style-bar) :is(.lp-simple-heading__text, .lp-block-simple-heading__text) {
+	display: block;
+	text-align: center;
+	background: #ff7a1a;
+	border-left: 0;
+	border-radius: 999px;
+	padding: 12px 24px;
+	font-size: 1.35em;
+	color: #fff;
+	box-shadow: 0 4px 0 #e05f00;
+}
+
+/* 見出しの他スタイルは配色だけ合わせる */
+.lp-design-simple-pop :is(.lp-simple-heading, .lp-block-simple-heading).is-style-lines :is(.lp-simple-heading__text, .lp-block-simple-heading__text)::before,
+.lp-design-simple-pop :is(.lp-simple-heading, .lp-block-simple-heading).is-style-lines :is(.lp-simple-heading__text, .lp-block-simple-heading__text)::after {
+	background: #ff7a1a;
+}
+
+.lp-design-simple-pop :is(.lp-simple-heading, .lp-block-simple-heading).is-style-kicker :is(.lp-simple-heading__text, .lp-block-simple-heading__text) {
+	color: #4a3410;
+}
+
+.lp-design-simple-pop :is(.lp-simple-heading, .lp-block-simple-heading).is-style-kicker :is(.lp-simple-heading__text, .lp-block-simple-heading__text)::before {
+	background: #ffd23f;
+	border-radius: 999px;
+}
+
+.lp-design-simple-pop :is(.lp-simple-heading, .lp-block-simple-heading).is-style-underline :is(.lp-simple-heading__text, .lp-block-simple-heading__text) {
+	color: #4a3410;
+	border-bottom-color: #ff7a1a;
+}
+
+/* 説明文 */
+.lp-design-simple-pop :is(.lp-simple-description, .lp-block-simple-description) p,
+.lp-design-simple-pop .lp-block-simple-description {
+	color: #4a3410;
+}
+
+/* ボタン: ピル型 */
+.lp-design-simple-pop :is(.lp-simple-button__link, .lp-block-simple-button__button) {
+	border-radius: 999px;
+	box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.lp-design-simple-pop .lp-simple-button__link:hover {
+	box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* フッター */
+.lp-design-simple-pop .lp-service-footer {
+	border-top-color: #ffd9a3;
+}
+
+.lp-design-simple-pop .lp-service-footer__operator-link {
+	color: #7a5a2a;
+}
+
+/* ==========================================================================
+   シンプル・トラスト（落ち着いた信頼感: 紺 × 白 × ゴールド）
+   ========================================================================== */
+body.lp-design-simple-trust,
+.editor-styles-wrapper.lp-design-simple-trust {
+	background: #e8edf4;
+	color: #2b3440;
+}
+
+.lp-design-simple-trust .lp-body--mobile,
+.lp-design-simple-trust .lp-service-footer,
+.lp-design-simple-trust .is-root-container,
+.lp-design-simple-trust .editor-visual-editor__post-title-wrapper {
+	background: #fff;
+	box-shadow: 0 0 24px rgba(31, 58, 95, 0.12);
+}
+
+/* 見出し（未選択・アクセントバー）: 小さめのラベル＋細い下線 */
+.lp-design-simple-trust :is(.lp-simple-heading, .lp-block-simple-heading):is(:not([class*="is-style-"]), .is-style-bar) :is(.lp-simple-heading__text, .lp-block-simple-heading__text) {
+	position: relative;
+	display: block;
+	text-align: center;
+	background: none;
+	border-left: 0;
+	border-bottom: 1px solid #d5dce6;
+	padding: 0 0 14px;
+	font-size: 1.4em;
+	letter-spacing: 0.02em;
+	color: #1f3a5f;
+}
+
+.lp-design-simple-trust :is(.lp-simple-heading, .lp-block-simple-heading):is(:not([class*="is-style-"]), .is-style-bar) :is(.lp-simple-heading__text, .lp-block-simple-heading__text)::before {
+	content: 'POINT';
+	display: block;
+	margin-bottom: 6px;
+	font-size: 0.5em;
+	letter-spacing: 0.2em;
+	color: #b08d3c;
+}
+
+.lp-design-simple-trust :is(.lp-simple-heading, .lp-block-simple-heading):is(:not([class*="is-style-"]), .is-style-bar) :is(.lp-simple-heading__text, .lp-block-simple-heading__text)::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -2px;
+	width: 48px;
+	height: 3px;
+	margin-left: -24px;
+	background: #c9a24a;
+}
+
+/* 見出しの他スタイルは配色だけ合わせる */
+.lp-design-simple-trust :is(.lp-simple-heading, .lp-block-simple-heading).is-style-lines :is(.lp-simple-heading__text, .lp-block-simple-heading__text) {
+	color: #1f3a5f;
+}
+
+.lp-design-simple-trust :is(.lp-simple-heading, .lp-block-simple-heading).is-style-lines :is(.lp-simple-heading__text, .lp-block-simple-heading__text)::before,
+.lp-design-simple-trust :is(.lp-simple-heading, .lp-block-simple-heading).is-style-lines :is(.lp-simple-heading__text, .lp-block-simple-heading__text)::after {
+	height: 2px;
+	background: #c9a24a;
+}
+
+.lp-design-simple-trust :is(.lp-simple-heading, .lp-block-simple-heading).is-style-kicker :is(.lp-simple-heading__text, .lp-block-simple-heading__text) {
+	color: #1f3a5f;
+}
+
+.lp-design-simple-trust :is(.lp-simple-heading, .lp-block-simple-heading).is-style-kicker :is(.lp-simple-heading__text, .lp-block-simple-heading__text)::before {
+	background: #1f3a5f;
+	color: #fff;
+}
+
+.lp-design-simple-trust :is(.lp-simple-heading, .lp-block-simple-heading).is-style-underline :is(.lp-simple-heading__text, .lp-block-simple-heading__text) {
+	color: #1f3a5f;
+	border-bottom: 3px solid #c9a24a;
+}
+
+/* 説明文 */
+.lp-design-simple-trust :is(.lp-simple-description, .lp-block-simple-description) p,
+.lp-design-simple-trust .lp-block-simple-description {
+	color: #2b3440;
+	line-height: 2;
+}
+
+/* ボタン: 角が少し丸い四角、ふんわりした影 */
+.lp-design-simple-trust :is(.lp-simple-button__link, .lp-block-simple-button__button) {
+	border-radius: 6px;
+	letter-spacing: 0.05em;
+	box-shadow: 0 4px 12px rgba(31, 58, 95, 0.28);
+}
+
+.lp-design-simple-trust .lp-simple-button__link:hover {
+	transform: translateY(1px);
+	box-shadow: 0 2px 6px rgba(31, 58, 95, 0.28);
+}
+
+/* フッター */
+.lp-design-simple-trust .lp-service-footer {
+	border-top-color: #e3e8ef;
+}
+
+.lp-design-simple-trust .lp-service-footer__operator-link {
+	color: #5a6878;
+}
+
+/* マーク付きリストの既定のマーク色（ブロックで色を選んだ場合はそちらが優先される）
+   ---------------------------------------------------------------------- */
+body.lp-design-simple-pop {
+	--lp-list-marker-color: #ff7a1a;
+}
+
+body.lp-design-simple-trust {
+	--lp-list-marker-color: #c9a24a;
+}

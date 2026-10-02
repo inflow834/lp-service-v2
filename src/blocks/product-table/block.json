@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/product-table",
+	"title": "商品テーブル（6項目）",
+	"category": "lp-service",
+	"icon": "grid-view",
+	"description": "3列2行・6項目のテーブル。各項目にアイコン（二重丸/一重丸/バツ）と一言テキストを設定",
+	"textdomain": "lp-service",
+	"attributes": {
+		"items": {
+			"type": "array",
+			"default": [
+				{ "label": "", "icon": "double_circle", "caption": "" },
+				{ "label": "", "icon": "double_circle", "caption": "" },
+				{ "label": "", "icon": "double_circle", "caption": "" },
+				{ "label": "", "icon": "double_circle", "caption": "" },
+				{ "label": "", "icon": "double_circle", "caption": "" },
+				{ "label": "", "icon": "double_circle", "caption": "" }
+			]
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,54 @@
+.lp-product-table {
+	margin: 24px 0;
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat( 3, 1fr );
+		gap: 1px;
+		background: #e0e0e0;
+		border: 1px solid #e0e0e0;
+	}
+
+	&__cell {
+		background: #fff;
+		padding: 16px 12px;
+		text-align: center;
+	}
+
+	&__label {
+		font-weight: 700;
+		font-size: 0.9em;
+		margin: 0 0 8px;
+	}
+
+	&__icon {
+		width: 36px;
+		height: 36px;
+		margin: 0 auto 6px;
+		color: #2fa84f;
+
+		&--cross {
+			color: #d63638;
+		}
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__caption {
+		font-size: 0.8em;
+		margin: 0;
+		color: #555;
+	}
+
+	@media ( max-width: 600px ) {
+		&__grid {
+			grid-template-columns: repeat( 3, 1fr );
+		}
+		&__cell {
+			padding: 10px 6px;
+		}
+	}
+}

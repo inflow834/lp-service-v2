@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/product-review",
+	"title": "口コミ",
+	"category": "lp-service",
+	"icon": "testimonial",
+	"description": "アイコン・タイトル・星（5段階）・コメント",
+	"textdomain": "lp-service",
+	"attributes": {
+		"avatarId": { "type": "number", "default": 0 },
+		"avatarUrl": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"rating": { "type": "number", "default": 5 },
+		"comment": { "type": "string", "default": "" }
+	},
+	"supports": { "html": false },
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

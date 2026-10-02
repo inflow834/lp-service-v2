@@ -1,0 +1,18 @@
+/* テキスト装飾（黄色マーカー・赤文字・青文字）
+   フロントとブロックエディタのキャンバスの両方で読み込む（enqueue_block_assets）。
+   クラス名は assets/js/text-formats.js で登録した書式と対応している。
+   ---------------------------------------------------------------------- */
+.lp-text-marker {
+	background: linear-gradient(transparent 55%, #fff200 55%);
+	font-weight: 700;
+}
+
+.lp-text-red {
+	color: #e60012;
+	font-weight: 700;
+}
+
+.lp-text-blue {
+	color: #0068b7;
+	font-weight: 700;
+}

@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/free-section",
+	"title": "自由入力セクション",
+	"category": "lp-service",
+	"icon": "welcome-write-blog",
+	"description": "見出し・テキスト・画像などを自由に配置できるセクション",
+	"textdomain": "lp-service",
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

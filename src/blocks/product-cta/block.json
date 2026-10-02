@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/product-cta",
+	"title": "商品CTAボタン",
+	"category": "lp-service",
+	"icon": "button",
+	"description": "テキスト・色を変更できるCTAボタン",
+	"textdomain": "lp-service",
+	"attributes": {
+		"text": { "type": "string", "default": "詳しくはこちら" },
+		"url": { "type": "string", "default": "" },
+		"color": { "type": "string", "default": "#d63638" },
+		"textColor": { "type": "string", "default": "#ffffff" }
+	},
+	"supports": { "html": false },
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

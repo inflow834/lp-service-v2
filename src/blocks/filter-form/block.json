@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/filter-form",
+	"title": "絞り込みフォーム",
+	"category": "lp-service",
+	"icon": "filter",
+	"description": "セレクトボックス・チェックボックスで商品を絞り込むフォーム。項目はLP編集画面の「絞り込みフォーム設定」で管理します",
+	"textdomain": "lp-service",
+	"attributes": {
+		"heading": { "type": "string", "default": "あなたにぴったりの買取サービスを探す" },
+		"buttonText": { "type": "string", "default": "この条件で検索する" }
+	},
+	"supports": { "html": false, "align": [ "wide", "full" ] },
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

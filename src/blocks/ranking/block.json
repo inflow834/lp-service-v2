@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/ranking",
+	"title": "ランキング",
+	"category": "lp-service",
+	"icon": "awards",
+	"description": "登録した商品をランキング形式で表示。順位は管理画面で手動並び替え",
+	"textdomain": "lp-service",
+	"attributes": {
+		"title": { "type": "string", "default": "人気ランキング" },
+		"productIds": { "type": "array", "default": [] }
+	},
+	"supports": { "html": false, "align": [ "wide", "full" ] },
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,19 @@
+.lp-product-cta {
+	text-align: center;
+	margin: 24px 0;
+
+	&__button {
+		display: inline-block;
+		padding: 16px 40px;
+		border-radius: 6px;
+		font-weight: 700;
+		font-size: 1.1em;
+		text-decoration: none;
+		transition: opacity 0.2s;
+
+		&:hover {
+			opacity: 0.85;
+			color: inherit;
+		}
+	}
+}

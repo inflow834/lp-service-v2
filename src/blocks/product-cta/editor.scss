@@ -1,0 +1,19 @@
+.lp-block-product-cta {
+	text-align: center;
+
+	&__button-wrap {
+		margin-bottom: 16px;
+	}
+
+	&__button {
+		display: inline-block;
+		padding: 16px 40px;
+		border-radius: 6px;
+		font-weight: 700;
+	}
+
+	&__link-control {
+		display: block;
+		margin-top: 8px;
+	}
+}

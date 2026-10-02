@@ -1,0 +1,196 @@
+/* ==========================================================================
+   LP Service - フロントエンド共通スタイル
+   ========================================================================== */
+
+:root {
+	--lp-color-primary: #2fa84f;
+	--lp-color-accent: #d63638;
+	--lp-color-warning: #f5a623;
+	--lp-color-bg-soft: #fdf6e3;
+	--lp-color-text: #222;
+	--lp-font: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: var(--lp-font);
+	color: var(--lp-color-text);
+	line-height: 1.7;
+	background: #fff;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+a {
+	color: inherit;
+}
+
+/* ヘッダーセクション
+   ---------------------------------------------------------------------- */
+.lp-header {
+	text-align: center;
+}
+
+.lp-header__inner {
+	padding: 20px 16px;
+}
+.lp-header__logo img{
+	margin:0 auto;
+}
+.lp-header__logo-text {
+	font-size: 1.4em;
+	font-weight: 800;
+}
+
+.lp-header__catch {
+	margin: 8px 0 0;
+	font-size: 1em;
+	color: #555;
+}
+
+.lp-header__banner img {
+	width: 100%;
+}
+
+/* ボディセクション共通
+   ---------------------------------------------------------------------- */
+.lp-body {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.lp-body--simple {
+	max-width: 600px;
+}
+
+/* 絞り込みページ
+   ---------------------------------------------------------------------- */
+.lp-search-page__inner {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 32px 20px 60px;
+}
+
+.lp-search-page__title {
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+.lp-search-results {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.lp-search-empty {
+	text-align: center;
+	color: #777;
+	padding: 40px 0;
+}
+
+/* 商品の全コンテンツ表示（ランキング・絞り込み結果で共通使用）
+   ---------------------------------------------------------------------- */
+.lp-product-full {
+	border: 1px solid #e6e6e6;
+	border-radius: 10px;
+	background: #fff;
+	padding: 20px;
+}
+
+.lp-product-full__head {
+	margin-bottom: 12px;
+}
+
+.lp-product-full__title {
+	font-weight: 700;
+	font-size: 1.15em;
+	margin: 0 0 4px;
+}
+
+.lp-product-full__catch {
+	margin: 0;
+	color: #555;
+	font-size: 0.9em;
+}
+
+.lp-product-full__thumb {
+	margin-top: 12px;
+}
+
+.lp-product-full__thumb img {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	border-radius: 6px;
+}
+
+.lp-product-full__content {
+	border-top: 1px dashed #e0e0e0;
+	padding-top: 8px;
+}
+
+.lp-product-full__content > * {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+/* フッター（運営者情報リンク）
+   ---------------------------------------------------------------------- */
+.lp-service-footer {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 20px 16px;
+	border-top: 1px solid #e6e6e6;
+}
+
+.lp-service-footer__operator-link {
+	display: inline-block;
+	font-size: 0.9em;
+	text-decoration: underline;
+	color: #555;
+}
+
+/* 運営者情報ページ（シンプルな枠組み・中央配置）
+   ---------------------------------------------------------------------- */
+.lp-operator-info {
+	display: flex;
+	justify-content: center;
+	padding: 40px 20px 60px;
+}
+
+.lp-operator-info__inner {
+	width: 100%;
+	max-width: 640px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.lp-operator-info__title {
+	text-align: center;
+	margin: 0 0 24px;
+}
+
+.lp-operator-info__content {
+	border: 1px solid #e0e0e0;
+	border-radius: 10px;
+	background: #fff;
+	padding: 32px;
+	text-align: left;
+}
+
+.lp-operator-info__content p {
+	margin: 0 0 14px;
+}
+
+.lp-operator-info__content p:last-child {
+	margin-bottom: 0;
+}

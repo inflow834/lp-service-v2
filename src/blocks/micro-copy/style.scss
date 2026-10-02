@@ -1,0 +1,36 @@
+// フロント・エディタ共通（edit.js / save.js とも同じクラス名を使う）
+// 両側の斜線（＼ ／）は文字ではなくCSSの線で描く。文字色（currentColor）と常に同じ色になる。
+.lp-micro-copy {
+	margin: 20px 0 8px;
+	padding: 0 20px;
+	text-align: center;
+	font-size: 1.15em;
+	font-weight: 700;
+	line-height: 1.5;
+
+	&__text {
+		display: inline-block;
+		margin: 0;
+
+		&::before,
+		&::after {
+			content: '';
+			display: inline-block;
+			width: 2px;
+			height: 1.2em;
+			vertical-align: -0.2em;
+			background: currentColor;
+			border-radius: 1px;
+		}
+
+		&::before {
+			margin-right: 0.7em;
+			transform: rotate(-30deg);
+		}
+
+		&::after {
+			margin-left: 0.7em;
+			transform: rotate(30deg);
+		}
+	}
+}

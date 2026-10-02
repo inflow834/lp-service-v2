@@ -1,0 +1,28 @@
+.lp-block-simple-banner {
+	text-align: center;
+
+	// WordPressの.components-buttonがdisplay:inline-flexを当ててくるため、
+	// display:blockだけでは高さが画像に追従せず、正方形化した画像が
+	// ボタンの外にはみ出して後続ブロックに重なって見える不具合があった。
+	// aspect-ratio + overflow:hiddenをボタン自身に持たせることで、
+	// 内部のdisplayの挙動に関わらず確実に正方形の枠に収める。
+	&__button {
+		display: block;
+		width: 100%;
+		// .components-buttonが高さを固定値(36px)で当ててくるため、aspect-ratioが効かなかった。
+		// heightをautoに戻して初めてaspect-ratioが機能する（CSS仕様上、height/widthどちらかが
+		// autoでないとaspect-ratioは適用されない）。
+		height: auto !important;
+		aspect-ratio: 1 / 1;
+		padding: 0;
+		border: 0;
+		overflow: hidden;
+	}
+
+	&__button img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}

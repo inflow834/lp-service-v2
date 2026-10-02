@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/points",
+	"title": "ポイントセクション",
+	"category": "lp-service",
+	"icon": "list-view",
+	"description": "番号付きのポイントを複数追加できるセクション",
+	"textdomain": "lp-service",
+	"attributes": {
+		"heading": { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "align": [ "wide", "full" ] },
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

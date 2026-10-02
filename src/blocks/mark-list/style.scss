@@ -1,0 +1,53 @@
+// フロント・エディタ共通（edit.js / save.js とも同じクラス名を使う）
+// マークの色は --lp-list-marker-color（ブロックで色を選んだ場合はインラインstyle、
+// 未選択ならデザインごとの値 / 無ければオレンジ）で決まる。
+.lp-mark-list {
+	list-style: none;
+	margin: 24px 0;
+	padding: 0 20px;
+	box-sizing: border-box;
+
+	li {
+		position: relative;
+		margin: 0 0 12px;
+		padding-left: 1.7em;
+		line-height: 1.7;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0.55em;
+			box-sizing: border-box;
+			background: var(--lp-list-marker-color, #f5a623);
+		}
+	}
+
+	&--circle li::before {
+		width: 0.7em;
+		height: 0.7em;
+		border-radius: 50%;
+	}
+
+	&--square li::before {
+		width: 0.65em;
+		height: 0.65em;
+		border-radius: 2px;
+	}
+
+	// チェックマークは「L字の枠線を回転」して描く（背景は使わない）
+	&--check li::before {
+		top: 0.35em;
+		left: 0.15em;
+		width: 0.45em;
+		height: 0.85em;
+		background: none;
+		border-right: 3px solid var(--lp-list-marker-color, #f5a623);
+		border-bottom: 3px solid var(--lp-list-marker-color, #f5a623);
+		transform: rotate(45deg);
+	}
+}

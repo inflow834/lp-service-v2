@@ -1,0 +1,45 @@
+name: Release
+
+# バージョンタグ（例: v1.4.0）をpushすると、テーマのzipをビルドしてGitHub Releaseを作成する。
+# タグの番号は style.css の「Version:」と一致している必要がある（不一致なら失敗する）。
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build blocks
+        run: npm run build
+
+      - name: Package theme zip
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          # タグ番号と style.css の Version が違えば bin/package.sh が失敗する
+          bash bin/package.sh "$VERSION"
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/lp-service-v2.zip \
+            --title "$GITHUB_REF_NAME" \
+            --generate-notes \
+            --latest

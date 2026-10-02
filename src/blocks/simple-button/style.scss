@@ -1,0 +1,28 @@
+.lp-simple-button {
+	text-align: center;
+	margin: 32px 0;
+
+	&__link {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		padding: 18px 48px;
+		border-radius: 8px;
+		font-weight: 700;
+		font-size: 1.15em;
+		text-decoration: none;
+		box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
+		transition: transform 0.15s, opacity 0.15s;
+
+		&:hover {
+			opacity: 0.9;
+			color: inherit;
+			transform: translateY(2px);
+			box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+		}
+	}
+
+	&__arrow {
+		font-size: 0.8em;
+	}
+}

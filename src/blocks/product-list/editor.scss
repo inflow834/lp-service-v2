@@ -1,0 +1,17 @@
+.lp-block-product-list {
+	&__items {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+
+		.components-base-control {
+			flex: 1;
+		}
+	}
+}

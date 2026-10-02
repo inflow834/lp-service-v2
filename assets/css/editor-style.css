@@ -1,0 +1,4 @@
+/* ブロックエディタ内の見た目をフロントに近づける */
+.editor-styles-wrapper {
+	font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}

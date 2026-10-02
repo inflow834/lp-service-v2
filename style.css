@@ -1,0 +1,15 @@
+/*
+Theme Name: LP Service V2
+Theme URI: https://github.com/inflow834/lp-service-v2
+Author: inflow
+Description: サービスLP（ランディングページ）専用テーマ（V2）。投稿・固定ページを使わず、カスタム投稿タイプ「service」でLPを、「product」で商品を管理する。GitHub Releasesから自動更新される。
+Version: 1.4.0
+Update URI: https://github.com/inflow834/lp-service-v2
+Requires at least: 6.0
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: lp-service
+*/
+
+/* このファイルはテーマ情報ヘッダーのみ。実スタイルは assets/css/style.css を参照 */

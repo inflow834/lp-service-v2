@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/simple-description",
+	"title": "説明文",
+	"category": "lp-service",
+	"icon": "text",
+	"description": "本文テキストのセクション（デザイン「シンプル」用）",
+	"textdomain": "lp-service",
+	"attributes": {
+		"text": { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "align": [ "wide", "full" ] },
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

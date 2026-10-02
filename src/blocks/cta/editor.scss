@@ -1,0 +1,35 @@
+.lp-block-cta {
+	text-align: center;
+	padding: 20px;
+	background: #fdf6e3;
+	border-radius: 12px;
+
+	&__heading {
+		margin-top: 0;
+	}
+
+	&__image-button img {
+		max-width: 200px;
+		height: auto;
+	}
+
+	&__button-wrap {
+		margin: 16px 0;
+	}
+
+	&__button {
+		display: inline-block;
+		padding: 14px 36px;
+		border-radius: 6px;
+		font-weight: 700;
+	}
+
+	&__link-control {
+		display: block;
+		margin-top: 8px;
+	}
+
+	&__free-text {
+		text-align: left;
+	}
+}

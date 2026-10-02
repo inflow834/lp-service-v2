@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/cta",
+	"title": "CTAセクション",
+	"category": "lp-service",
+	"icon": "megaphone",
+	"description": "見出し・画像・キャッチコピー・ボタン・自由入力テキストのCTAセクション",
+	"textdomain": "lp-service",
+	"attributes": {
+		"heading": { "type": "string", "default": "" },
+		"imageId": { "type": "number", "default": 0 },
+		"imageUrl": { "type": "string", "default": "" },
+		"catchCopy": { "type": "string", "default": "" },
+		"freeText": { "type": "string", "default": "" },
+		"buttonText": { "type": "string", "default": "詳しくはこちら" },
+		"buttonUrl": { "type": "string", "default": "" },
+		"buttonColor": { "type": "string", "default": "#d63638" },
+		"buttonTextColor": { "type": "string", "default": "#ffffff" }
+	},
+	"supports": { "html": false, "align": [ "wide", "full" ] },
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/simple-banner",
+	"title": "バナー画像",
+	"category": "lp-service",
+	"icon": "format-image",
+	"description": "全幅で表示するバナー画像（デザイン「シンプル」用）",
+	"textdomain": "lp-service",
+	"attributes": {
+		"imageId": { "type": "number", "default": 0 },
+		"imageUrl": { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "align": [ "wide", "full" ] },
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

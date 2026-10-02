@@ -1,0 +1,95 @@
+.lp-comparison-table {
+	margin: 32px 0;
+
+	&__heading {
+		text-align: center;
+		font-size: 1.4em;
+		margin: 0 0 16px;
+	}
+
+	&__scroll {
+		overflow-x: auto;
+	}
+
+	&__table {
+		width: 100%;
+		table-layout: fixed;
+		border-collapse: collapse;
+		min-width: 560px;
+	}
+
+	&__col-label {
+		width: 110px;
+	}
+
+	th,
+	td {
+		border: 1px solid #e0e0e0;
+		padding: 12px;
+		text-align: center;
+	}
+
+	&__corner {
+		background: #fff;
+	}
+
+	&__product-head {
+		background: #2fa84f;
+		color: #fff;
+	}
+
+	&__thumb img {
+		width: 100%;
+		max-width: 220px;
+		height: auto;
+		margin: 8px auto 0;
+		border-radius: 4px;
+	}
+
+	&__product-title {
+		font-weight: 700;
+		margin: 0;
+	}
+
+	&__row-label {
+		background: #f7f7f2;
+		text-align: left;
+		white-space: nowrap;
+	}
+
+	&__icon {
+		display: block;
+		width: 28px;
+		height: 28px;
+		margin: 0 auto 4px;
+		color: #2fa84f;
+
+		&--cross {
+			color: #d63638;
+		}
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__caption {
+		font-size: 0.75em;
+		color: #555;
+	}
+
+	&__cell--cta {
+		padding: 16px 10px;
+	}
+
+	&__cell--cta .lp-product-cta {
+		margin: 0;
+	}
+
+	&__cell--cta .lp-product-cta__button {
+		display: block;
+		padding: 10px 12px;
+		font-size: 0.9em;
+	}
+}

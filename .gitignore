@@ -1,0 +1,26 @@
+# 依存パッケージ・ビルド成果物（buildはCIのリリース時に生成する）
+node_modules/
+build/
+
+# リリース用の出力
+dist/
+*.zip
+
+# バックアップ・一時ファイル
+*.bak
+
+# 公開しない内部向け資料（引き継ぎメモ・検証メモ。ローカルのパスや案件の経緯を含む）
+CLAUDE.md
+docs/
+
+# ログ
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS・エディタのゴミ
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

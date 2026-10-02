@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/mark-list",
+	"title": "マーク付きリスト",
+	"category": "lp-service",
+	"icon": "editor-ul",
+	"description": "先頭のマーク（丸・四角・チェックマーク）を選べるリスト。マークの色はサイドバーで変更できる",
+	"textdomain": "lp-service",
+	"attributes": {
+		"listType": { "type": "string", "default": "circle" },
+		"markerColor": { "type": "string", "default": "" },
+		"items": {
+			"type": "array",
+			"source": "query",
+			"selector": "li",
+			"query": {
+				"content": { "type": "string", "source": "html" }
+			},
+			"default": [ { "content": "" } ]
+		}
+	},
+	"supports": { "html": false },
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

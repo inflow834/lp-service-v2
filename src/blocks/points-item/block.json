@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/points-item",
+	"title": "ポイント項目",
+	"category": "lp-service",
+	"icon": "star-filled",
+	"description": "ポイントセクション内の1項目（番号・見出し・本文）",
+	"parent": [ "lp-service/points" ],
+	"textdomain": "lp-service",
+	"attributes": {
+		"heading": { "type": "string", "default": "" },
+		"body": { "type": "string", "default": "" },
+		"imageId": { "type": "number", "default": 0 },
+		"imageUrl": { "type": "string", "default": "" }
+	},
+	"supports": { "html": false },
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

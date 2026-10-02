@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lp-service/simple-heading",
+	"title": "シンプル見出し",
+	"category": "lp-service",
+	"icon": "editor-textcolor",
+	"description": "見出しテキスト（デザイン「シンプル」用）。サイドバーの「スタイル」から見た目を選択できる",
+	"textdomain": "lp-service",
+	"attributes": {
+		"text": { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "align": [ "wide", "full" ] },
+	"styles": [
+		{ "name": "bar", "label": "アクセントバー", "isDefault": true },
+		{ "name": "lines", "label": "二重線" },
+		{ "name": "kicker", "label": "ラベル+大見出し" },
+		{ "name": "underline", "label": "下線強調" }
+	],
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
