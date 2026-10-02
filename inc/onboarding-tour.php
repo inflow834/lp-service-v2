@@ -142,7 +142,7 @@ function lp_service_get_tour_steps() {
 			'chapter' => 1,
 			'group'   => 'service',
 			'title'   => 'デザインテンプレートを選ぶ',
-			'body'    => '「スタンダード」か「シンプル」を選びます。選んだ瞬間に、そのデザインの骨組みブロックが本文へ自動で流し込まれます。<strong>選ばないと本文が空のままで、この先の説明ができません。</strong>すでに本文にブロックがある場合は、入れ替えてよいか確認が出ます。',
+			'body'    => '「スタンダード」「シンプル」「シンプル・ポップ」「シンプル・トラスト」の4種類から選びます。選んだ瞬間に、そのデザインの骨組みブロックが本文へ自動で流し込まれます。<strong>ポップとトラストはスマホ専用</strong>で、ブロックの構成は「シンプル」と同じ（見た目だけが違います）。<strong>選ばないと本文が空のままで、この先の説明ができません。</strong>すでに本文にブロックがある場合は、入れ替えてよいか確認が出ます。',
 			'target'  => array( '#lp_design_template' ),
 			'tier'    => 'required',
 		),
@@ -307,6 +307,40 @@ function lp_service_get_tour_steps() {
 			'frame'     => 'canvas',
 			'tier'      => 'optional',
 			'designs'   => array( 'simple' ),
+		),
+
+		// スマホ専用デザイン（ポップ・トラスト）だけの説明。ブロック構成は「シンプル」と同じなので
+		// 上の simple 用ステップがそのまま出るうえに、幅の違いだけをここで補足する。
+		array(
+			'id'      => 'c1-mobile-width',
+			'chapter' => 1,
+			'group'   => 'service',
+			'title'   => 'スマホ専用の幅で表示される',
+			'body'    => 'このデザインは<strong>最大430pxの細い列</strong>で表示されます。PCで開いた場合も、中央に細い列が置かれ、左右はデザインの背景色で埋まります。編集画面も同じ幅なので、スマホでの見え方を確認しながら作れます。',
+			'target'  => array( 'iframe[name="editor-canvas"]', '.editor-visual-editor' ),
+			'tier'    => 'optional',
+			'designs' => array( 'simple-pop', 'simple-trust' ),
+		),
+
+		// 全デザイン共通: ブロックの追加と、文字の装飾
+		array(
+			'id'      => 'c1-add-blocks',
+			'chapter' => 1,
+			'group'   => 'service',
+			'title'   => 'ブロックを足す',
+			'body'    => '左上の「＋」から、好きなブロックを好きな場所へ追加できます。<strong>「マイクロコピー」</strong>（＼今がおとく／のようなボタン近くの一言）と、<strong>「マーク付きリスト」</strong>（先頭のマークを丸・四角・チェックマークから選べる箇条書き）もここから選べます。色や種類はサイドバーの「設定」で変えられます。',
+			'target'  => array( '.editor-document-tools__inserter-toggle', '.edit-post-header-toolbar__inserter-toggle' ),
+			'tier'    => 'optional',
+		),
+		array(
+			'id'      => 'c1-text-decoration',
+			'chapter' => 1,
+			'group'   => 'service',
+			'title'   => '文字を目立たせる（装飾）',
+			'body'    => '文章の一部を選択して、ブロックの上に出るツールバーの<strong>「︙（さらに表示）」</strong>を開くと、<strong>黄色マーカー・赤文字・青文字</strong>を付けられます（もう一度選ぶと外れます）。説明文・段落・自由入力の中・マイクロコピー・マーク付きリストで使えます。見出しブロックには付けられません。',
+			'target'  => array( '[data-type="lp-service/simple-description"]', '[data-type="lp-service/free-section"]' ),
+			'frame'   => 'canvas',
+			'tier'    => 'optional',
 		),
 
 		// 絞り込みフォーム設定（スタンダードのみ）
@@ -477,6 +511,15 @@ function lp_service_get_tour_steps() {
 			'target'  => array( '[data-type="lp-service/product-cta"]' ),
 			'frame'   => 'canvas',
 			'tier'    => 'recommended',
+		),
+		array(
+			'id'      => 'c2-add-blocks',
+			'chapter' => 2,
+			'group'   => 'product',
+			'title'   => 'ブロックの追加と文字の装飾',
+			'body'    => '商品でも、左上の「＋」から<strong>「マイクロコピー」「マーク付きリスト」</strong>を追加できます。また文章を選択して、ツールバーの「︙（さらに表示）」から<strong>黄色マーカー・赤文字・青文字</strong>を付けられます。',
+			'target'  => array( '.editor-document-tools__inserter-toggle', '.edit-post-header-toolbar__inserter-toggle' ),
+			'tier'    => 'optional',
 		),
 		array(
 			'id'        => 'c2-filter-values',

@@ -70,11 +70,17 @@
 	/**
 	 * デザインテンプレート。LP編集画面ではPHPが渡した実値、それ以外の画面では
 	 * 章1で記録した値を使う。どちらも無ければ standard とみなして番号を数える。
-	 * シンプル・ポップ等の「simple-*」は見た目違いでブロック構成が同じため、ツアー上は simple として扱う。
+	 * シンプル・ポップ等の「simple-*」は見た目違いでブロック構成が同じため、ツアー上は simple として扱う
+	 * （simple 用のステップは3つのシンプル系すべてに出る）。幅などの違いだけを説明するステップは、
+	 * designs に 'simple-pop' のような実際の値を書けば、そのデザインにだけ出せる。
 	 */
-	function activeDesign() {
+	function rawDesign() {
 		var state = getState();
-		var design = PREREQ.designTemplate || (state && state.design) || 'standard';
+		return PREREQ.designTemplate || (state && state.design) || 'standard';
+	}
+
+	function activeDesign() {
+		var design = rawDesign();
 		return design.indexOf('simple-') === 0 ? 'simple' : design;
 	}
 
@@ -85,10 +91,11 @@
 	function scopedSteps() {
 		var state = getState() || {};
 		var design = activeDesign();
+		var raw = rawDesign();
 		var only = state.chapterOnly || null;
 
 		return ALL_STEPS.filter(function (step) {
-			if (step.designs && step.designs.indexOf(design) === -1) return false;
+			if (step.designs && step.designs.indexOf(design) === -1 && step.designs.indexOf(raw) === -1) return false;
 			if (only) {
 				if (step.chapter !== only) return false;
 				if (step.transition) return false;

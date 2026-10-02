@@ -292,17 +292,21 @@ function lp_service_get_design_block_templates() {
 			array( 'lp-service/simple-description' ),
 			array( 'lp-service/simple-button' ),
 		),
-		'simple-pop'   => lp_service_get_simple_block_template( '#ff7a1a', '#ffffff' ),
-		'simple-trust' => lp_service_get_simple_block_template( '#1f3a5f', '#ffffff' ),
+		'simple-pop'   => lp_service_get_simple_block_template( '#ff7a1a', '#ffffff', '#e6393f' ),
+		'simple-trust' => lp_service_get_simple_block_template( '#1f3a5f', '#ffffff', '#1f3a5f' ),
 	);
 }
 
 /**
  * スマホ専用の「シンプル」系デザインの初期ブロック構成
- * ブロックの並びは「シンプル」と同じで、ボタン色だけをデザインの配色に合わせる。
- * ボタン色はブロック属性として保存されるため、あとからブロック側で個別に変更できる。
+ * 「シンプル」の6ブロックに、マイクロコピー・マーク付きリスト3種類（丸・四角・チェック）・
+ * 文字装飾（黄色マーカー・赤文字・青文字）を付けたサンプル文を加えた見本入りの構成。
+ * 新ブロックと装飾の使い方を、触る前から実物で見られるようにするのが目的。
+ * ボタン色・マイクロコピーの文字色はブロック属性として保存されるため、あとからブロック側で個別に変更できる。
+ * リストのマーク色は未指定のまま（デザインごとの既定色に従う。design-mobile.css）。
+ * 装飾のクラス名（lp-text-*）は assets/js/text-formats.js で登録した書式と一致させること。
  */
-function lp_service_get_simple_block_template( $button_color, $button_text_color ) {
+function lp_service_get_simple_block_template( $button_color, $button_text_color, $micro_copy_color ) {
 	$button = array(
 		'lp-service/simple-button',
 		array(
@@ -311,12 +315,41 @@ function lp_service_get_simple_block_template( $button_color, $button_text_color
 		),
 	);
 
+	$mark_list = static function ( $type ) {
+		return array(
+			'lp-service/mark-list',
+			array(
+				'listType' => $type,
+				'items'    => array(
+					array( 'content' => '無料で査定・相談できます' ),
+					array( 'content' => '<span class="lp-text-red">最短即日</span>で対応します' ),
+					array( 'content' => '<span class="lp-text-marker">全国どこでも</span>対応可能です' ),
+				),
+			),
+		);
+	};
+
 	return array(
 		array( 'lp-service/simple-banner' ),
+		array(
+			'lp-service/micro-copy',
+			array(
+				'text'  => '今がおとく',
+				'color' => $micro_copy_color,
+			),
+		),
 		$button,
-		array( 'lp-service/simple-description' ),
+		array(
+			'lp-service/simple-description',
+			array(
+				'text' => '今だけ<span class="lp-text-marker">特別価格</span>でご案内中です。<span class="lp-text-red">期間限定</span>のキャンペーンや、<span class="lp-text-blue">無料相談</span>も受付中です。',
+			),
+		),
 		array( 'lp-service/simple-heading' ),
 		array( 'lp-service/simple-description' ),
+		$mark_list( 'circle' ),
+		$mark_list( 'square' ),
+		$mark_list( 'check' ),
 		$button,
 	);
 }
