@@ -16,9 +16,17 @@
 		"buttonText": { "type": "string", "default": "詳しくはこちら" },
 		"buttonUrl": { "type": "string", "default": "" },
 		"buttonColor": { "type": "string", "default": "#d63638" },
-		"buttonTextColor": { "type": "string", "default": "#ffffff" }
+		"buttonTextColor": { "type": "string", "default": "#ffffff" },
+		"openInNewTab": { "type": "boolean", "default": true },
+		"cushion": { "type": "boolean", "default": false },
+		"buttonNo": { "type": "number", "default": 0 },
+		"cvTagId": { "type": "number", "default": 0 },
+		"cvTagCustom": { "type": "string", "default": "" }
 	},
-	"supports": { "html": false, "align": [ "wide", "full" ] },
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"

@@ -247,7 +247,7 @@ function lp_service_render_product_full( $product_id ) {
 		</div>
 		<div class="lp-product-full__content">
 			<?php foreach ( $blocks as $block ) : ?>
-				<?php echo render_block( $block ); // phpcs:ignore ?>
+				<?php echo lp_service_render_block_for_post( $block, $product_id ); // phpcs:ignore ?>
 			<?php endforeach; ?>
 		</div>
 	</div>

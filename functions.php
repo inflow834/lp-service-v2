@@ -20,6 +20,7 @@ define( 'LP_SERVICE_URI', get_template_directory_uri() );
 require LP_SERVICE_DIR . '/inc/post-types.php';
 require LP_SERVICE_DIR . '/inc/meta-boxes.php';
 require LP_SERVICE_DIR . '/inc/rewrite.php';
+require LP_SERVICE_DIR . '/inc/cushion.php';
 require LP_SERVICE_DIR . '/inc/icons.php';
 require LP_SERVICE_DIR . '/inc/blocks.php';
 require LP_SERVICE_DIR . '/inc/rest.php';

@@ -96,7 +96,7 @@ foreach ( $products as $product ) {
 					<?php foreach ( $products as $product ) : ?>
 						<td class="lp-comparison-table__cell lp-comparison-table__cell--cta">
 							<?php if ( $product['cta_block'] ) : ?>
-								<?php echo render_block( $product['cta_block'] ); // phpcs:ignore ?>
+								<?php echo lp_service_render_block_for_post( $product['cta_block'], $product['id'] ); // phpcs:ignore ?>
 							<?php endif; ?>
 						</td>
 					<?php endforeach; ?>

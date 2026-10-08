@@ -11,9 +11,16 @@
 		"text": { "type": "string", "default": "詳しく見てみる" },
 		"url": { "type": "string", "default": "" },
 		"color": { "type": "string", "default": "#e6393f" },
-		"textColor": { "type": "string", "default": "#ffffff" }
+		"textColor": { "type": "string", "default": "#ffffff" },
+		"openInNewTab": { "type": "boolean", "default": true },
+		"cushion": { "type": "boolean", "default": false },
+		"buttonNo": { "type": "number", "default": 0 },
+		"cvTagId": { "type": "number", "default": 0 },
+		"cvTagCustom": { "type": "string", "default": "" }
 	},
-	"supports": { "html": false },
+	"supports": {
+		"html": false
+	},
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"

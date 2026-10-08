@@ -9,6 +9,8 @@ import {
 } from '@wordpress/block-editor';
 import { TextControl, Button, Popover } from '@wordpress/components';
 import { useState } from '@wordpress/element';
+import CushionPanel from '../../shared/CushionPanel';
+import NewTabPanel from '../../shared/NewTabPanel';
 
 const BUTTON_COLORS = [
 	{ name: 'レッド', color: '#d63638' },
@@ -23,7 +25,7 @@ const TEXT_COLORS = [
 	{ name: '黒', color: '#1a1a1a' },
 ];
 
-export default function Edit( { attributes, setAttributes } ) {
+export default function Edit( { clientId, attributes, setAttributes } ) {
 	const {
 		heading,
 		imageId,
@@ -59,6 +61,8 @@ export default function Edit( { attributes, setAttributes } ) {
 						},
 					] }
 				/>
+				<NewTabPanel attributes={ attributes } setAttributes={ setAttributes } />
+				<CushionPanel clientId={ clientId } attributes={ attributes } setAttributes={ setAttributes } />
 			</InspectorControls>
 			<div { ...blockProps }>
 				<RichText tagName="h2" className="lp-block-cta__heading" value={ heading } onChange={ ( v ) => setAttributes( { heading: v } ) } placeholder="見出しを入力" allowedFormats={ [] } />
@@ -93,7 +97,10 @@ export default function Edit( { attributes, setAttributes } ) {
 						</Button>
 						{ isLinkOpen && (
 							<Popover onClose={ () => setIsLinkOpen( false ) }>
-								<LinkControl value={ { url: buttonUrl } } onChange={ ( v ) => setAttributes( { buttonUrl: v.url || '' } ) } />
+								<LinkControl
+									value={ { url: buttonUrl, opensInNewTab: attributes.openInNewTab } }
+									onChange={ ( v ) => setAttributes( { buttonUrl: v.url || '', openInNewTab: v.opensInNewTab ?? attributes.openInNewTab } ) }
+								/>
 							</Popover>
 						) }
 					</div>

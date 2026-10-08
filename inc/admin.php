@@ -53,12 +53,14 @@ add_action( 'manage_service_posts_custom_column', 'lp_service_service_column_con
 
 /**
  * パーマリンク未更新による404を防ぐための管理画面通知
+ * テーマの自動更新ではafter_switch_themeが走らないため、バージョンが変わるたびに
+ * フラッシュして新しいリライトルール（/go/ など）を反映する。
  */
 function lp_service_rewrite_notice() {
-	if ( get_option( 'lp_service_rewrite_flushed' ) ) {
+	if ( LP_SERVICE_VERSION === get_option( 'lp_service_rewrite_flushed' ) ) {
 		return;
 	}
 	flush_rewrite_rules();
-	update_option( 'lp_service_rewrite_flushed', 1 );
+	update_option( 'lp_service_rewrite_flushed', LP_SERVICE_VERSION );
 }
 add_action( 'admin_init', 'lp_service_rewrite_notice' );

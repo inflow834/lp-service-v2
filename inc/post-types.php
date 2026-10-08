@@ -214,6 +214,7 @@ function lp_service_flush_rewrite_on_switch() {
 	lp_service_register_product_cpt();
 	lp_service_register_operator_info_cpt();
 	lp_service_add_search_rewrite_rules();
+	lp_service_add_cushion_rewrite_rule();
 	flush_rewrite_rules();
 }
 add_action( 'after_switch_theme', 'lp_service_flush_rewrite_on_switch' );

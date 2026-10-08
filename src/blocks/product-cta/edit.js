@@ -7,6 +7,8 @@ import {
 } from '@wordpress/block-editor';
 import { Popover, Button } from '@wordpress/components';
 import { useState } from '@wordpress/element';
+import CushionPanel from '../../shared/CushionPanel';
+import NewTabPanel from '../../shared/NewTabPanel';
 
 const BUTTON_COLORS = [
 	{ name: 'レッド', color: '#d63638' },
@@ -21,7 +23,7 @@ const TEXT_COLORS = [
 	{ name: '黒', color: '#1a1a1a' },
 ];
 
-export default function Edit( { attributes, setAttributes } ) {
+export default function Edit( { clientId, attributes, setAttributes } ) {
 	const { text, url, color, textColor } = attributes;
 	const blockProps = useBlockProps( { className: 'lp-block-product-cta' } );
 	const [ isLinkOpen, setIsLinkOpen ] = useState( false );
@@ -47,6 +49,8 @@ export default function Edit( { attributes, setAttributes } ) {
 						},
 					] }
 				/>
+				<NewTabPanel attributes={ attributes } setAttributes={ setAttributes } />
+				<CushionPanel clientId={ clientId } attributes={ attributes } setAttributes={ setAttributes } />
 			</InspectorControls>
 			<div { ...blockProps }>
 				<div className="lp-block-product-cta__button-wrap">
@@ -64,7 +68,10 @@ export default function Edit( { attributes, setAttributes } ) {
 						</Button>
 						{ isLinkOpen && (
 							<Popover onClose={ () => setIsLinkOpen( false ) }>
-								<LinkControl value={ { url } } onChange={ ( value ) => setAttributes( { url: value.url || '' } ) } />
+								<LinkControl
+									value={ { url, opensInNewTab: attributes.openInNewTab } }
+									onChange={ ( value ) => setAttributes( { url: value.url || '', openInNewTab: value.opensInNewTab ?? attributes.openInNewTab } ) }
+								/>
 							</Popover>
 						) }
 					</div>
